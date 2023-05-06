@@ -1,5 +1,6 @@
 package com.haitao.pb.gateway.controller;
 
+import com.haitao.pb.common.response.Result;
 import com.haitao.pb.gateway.feign.client.CalculateClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,17 +20,17 @@ public class CalculateGateway {
     CalculateClient calculateClient;
 
     @RequestMapping(name = "list",method = RequestMethod.GET, path = "/list")
-    public List<String> getList()
+    public Result<List<String>> getList()
     {
         List<String> resList = calculateClient.getCalculate();
-        return resList;
+        return Result.success(resList);
     }
 
     @RequestMapping(name = "add",method = RequestMethod.POST, path = "/add")
-    public int getList(@RequestParam(name="number") int number, @RequestParam(name="number1") int number1)
+    public Result<?> getList(@RequestParam(name="number") int number, @RequestParam(name="number1") int number1)
     {
         int res = calculateClient.add(number,number1);
-        return res;
+        return Result.success(res);
     }
 
 }
