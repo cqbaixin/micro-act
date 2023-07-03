@@ -41,6 +41,11 @@
             <artifactId>micro-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.haitao.pb</groupId>
+            <artifactId>micro-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

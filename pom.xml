@@ -20,6 +20,7 @@
         <module>micro-eureka</module>
         <module>micro-gateway</module>
         <module>micro-common</module>
+        <module>micro-service</module>
     </modules>
 
     <properties>

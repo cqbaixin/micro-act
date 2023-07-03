@@ -19,14 +19,14 @@ public class CalculateGateway {
     @Resource
     CalculateClient calculateClient;
 
-    @RequestMapping(name = "list",method = RequestMethod.GET, path = "/list")
+    @RequestMapping(name = "list",method = RequestMethod.GET, value = "/list")
     public Result<List<String>> getList()
     {
         List<String> resList = calculateClient.getCalculate();
         return Result.success(resList);
     }
 
-    @RequestMapping(name = "add",method = RequestMethod.POST, path = "/add")
+    @RequestMapping(name = "add",method = RequestMethod.POST, value = "/add")
     public Result<?> getList(@RequestParam(name="number") int number, @RequestParam(name="number1") int number1)
     {
         int res = calculateClient.add(number,number1);
