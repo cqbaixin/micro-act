@@ -1,13 +1,16 @@
 package com.haitao.pb.service.model.elasticsearch;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
-import java.math.BigInteger;
+import java.io.Serializable;
+
 
 @Document(indexName = "user")
-public class User {
+public class User implements Serializable {
 
-    private BigInteger id;
+    @Id
+    private Long id;
 
     private String name;
 
@@ -17,11 +20,11 @@ public class User {
 
     private String introduce;
 
-    public BigInteger getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

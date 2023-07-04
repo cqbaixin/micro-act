@@ -2,18 +2,21 @@ package com.haitao.pb.service.impl.elasticsearch.user;
 
 
 import com.haitao.pb.service.model.elasticsearch.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
 @Component
 public interface UserInterface {
 
-    public User save(User user);
+    User save(User user);
 
-    public List<User>findAll();
+    List<User>findAll();
 
-    public User findById(String id);
+    User findById(String id);
 
+    Page<User> findByAge(int age, Pageable pageable);
 }
